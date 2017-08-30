@@ -2,16 +2,18 @@
 import React from 'react'
 import {render} from 'react-dom'
 import { Provider } from 'react-redux'
-
+import { BrowserRouter as Router } from 'react-router-dom'
 import store from './store'
 import Root from './components/Root'
-import AllCampueses from './components/AllCampueses'
+import Main from './components/Main'
+//import Random from './components/Random'
 
 //same as ReactDOM
 render (
   <Provider store={store}>
-    <Root/>
-    <AllCampuses />
+    <Router>
+      <Main />
+    </Router> 
   </Provider>,
   document.getElementById('main')
 )

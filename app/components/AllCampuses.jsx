@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import store from './store'
+// import store from '../store'
 
 class AllCampuses extends Component {
 
@@ -10,7 +10,7 @@ class AllCampuses extends Component {
     }
 
     render() {
-        const { campueses } = this.props;
+        const { campuses } = this.props;
 
         return (
             <ul>
@@ -34,4 +34,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const CampusListContainer = connect(mapStateToProps)(AllCampuses)
+export default connect(mapStateToProps)(AllCampuses)
