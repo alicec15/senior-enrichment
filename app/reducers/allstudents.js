@@ -10,6 +10,7 @@ export const getAllStudents = (students) => {
     return {type: GET_ALL_STUDENTS, students}
 }
 
+//thunk
 export function fetchStudents () {
     
       return function thunk (dispatch) {
@@ -19,8 +20,8 @@ export function fetchStudents () {
             const action = getAllStudents(students);
             dispatch(action);
           });
-      };
-    }
+    };
+}
 
 //reducer 
 export default function allStudentReducer (state = [], action){

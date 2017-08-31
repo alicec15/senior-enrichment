@@ -16,9 +16,7 @@ export function fetchCampuses () {
         return axios.get('/api/campus')
           .then(res => res.data)
           .then(campuses => {
-            console.log(campuses, 'hi')
             const action = getAllCampuses(campuses);
-            console.log('this is action---->', action)
             dispatch(action);
           });
       };

@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
 
 //GET student by ID
 router.get('/:studentId', function (req, res, next) {
-    Campus.findById(req.params.studentId)
+    Student.findById(req.params.studentId)
         .then(student => res.json(student))
         .catch(next)
 })

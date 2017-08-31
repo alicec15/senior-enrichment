@@ -6,14 +6,20 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 //subreducers
 import campuses from './allcampuses';
-import students from './allstudents'
+import students from './allstudents';
+import student from './onestudent';
+import campus from './onecampus';
+
 
 //combining subreducers
-const reducer = combineReducers({campuses, students});
+const reducer = combineReducers({campuses, students, student, campus});
 
 export default reducer;
 export * from './allcampuses'
 export * from './allstudents'
+export * from './onestudent'
+export * from './onecampus'
+
 
 
 

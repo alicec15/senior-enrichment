@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class AllCampuses extends Component {
 
     constructor(props) {
-        super(props);
+        super(props); 
     }
 
     render() {
@@ -14,10 +14,12 @@ class AllCampuses extends Component {
 
         return (
             <ul>
+                <h2>CAMPUSES: </h2>
                 {campuses.map(campus => {
                     return (
                         <li key={campus.id}>
                             <NavLink to={`/campus/${campus.id}`} activeClassName='active'>
+                                <img src={campus.image}></img>
                                 <span>{campus.name}</span>
                             </NavLink>
                         </li>

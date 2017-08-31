@@ -14,10 +14,11 @@ class AllStudents extends Component {
 
         return (
             <ul>
+                <h2>STUDENTS: </h2>
                 {students.map(student => {
                     return (
                         <li key={student.id}>
-                            <NavLink to={`/student/${student.id}`} activeClassName='active'>
+                            <NavLink to={`/students/${student.id}`} activeClassName='active'>
                                 <span>{student.name}</span>
                             </NavLink>
                         </li>
