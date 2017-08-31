@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import store from '../store'
-import { fetchOneStudent } from '../reducers/index';
+import { fetchOneStudent, fetchCampfromStud } from '../reducers/index';
 
 class SingleStudent extends Component {
 
@@ -10,16 +10,20 @@ class SingleStudent extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.handleOneStudent(this.props.match.params.studentId)
+    componentWillMount() {
+        this.props.handleOneStudent(Number(this.props.match.params.studentId));
+        this.props.handleCampusfromStudent(Number(this.props.match.params.studentId));
     }
     
     render() {
-        const { student } = this.props;
+        const { student, campus } = this.props;
 
         return (
             <ul>
                 <h1>{student.name}</h1>
+                <li><b>Email:</b> {student.email}   
+                <li><b>Campus: </b><NavLink to={`/campus/${campus.id}`} activeClassName='active'>{campus.name}</NavLink></li>
+                </li>
             </ul>
         )
     }
@@ -27,7 +31,9 @@ class SingleStudent extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        student: state.student
+        student: state.student,
+        campus: state.campus
+        
     }
 }
 
@@ -35,6 +41,9 @@ const mapDispatchToProps = dispatch => {
     return {
         handleOneStudent: (id) => {
             dispatch(fetchOneStudent(id))
+        },
+        handleCampusfromStudent: (id) => {
+            dispatch(fetchCampfromStud(id))
         }
     }
 }

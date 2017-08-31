@@ -25,6 +25,7 @@ class SingleCampus extends Component {
                 <img src={campus.image}></img>
                     
                 {filteredStudents.map(student=> {
+            
                     return (
                         <li key={student.id}>
                             <NavLink to={`/students/${student.id}`} activeClassName='active'>

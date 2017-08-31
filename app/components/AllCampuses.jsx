@@ -17,12 +17,16 @@ class AllCampuses extends Component {
                 <h2>CAMPUSES: </h2>
                 {campuses.map(campus => {
                     return (
-                        <li key={campus.id}>
-                            <NavLink to={`/campus/${campus.id}`} activeClassName='active'>
-                                <img src={campus.image}></img>
-                                <span>{campus.name}</span>
-                            </NavLink>
-                        </li>
+                        <div>
+                            <li key={campus.id}>
+                                <NavLink to={`/campus/${campus.id}`} activeClassName='active'>
+                                    <img src={campus.image}></img>
+                                    <span>{campus.name}</span>
+                                </NavLink>
+                            </li>
+                            <form>
+                            </form>
+                        </div>
                     )
                 })}
             </ul>
