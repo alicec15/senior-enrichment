@@ -36,10 +36,11 @@ router.post('/', function (req, res, next){
         }
     })
     .spread(function (campus, createdCampus) {
-        Campus.create(req.body.image)
-            .then(function(camp){
-                res.json({message: 'Created successfully', campus: camp})
-            })
+        // Campus.create(req.body.image)
+        //     .then(function(camp){
+        //         res.json({message: 'Created successfully', campus: camp})
+        //     })
+        res.json({message: 'created successfully', campus: campus})
     })
     .catch(next)
 })

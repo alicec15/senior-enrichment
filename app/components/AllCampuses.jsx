@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import NewCampus from './NewCampus'
 // import store from '../store'
 
 class AllCampuses extends Component {
@@ -17,18 +18,15 @@ class AllCampuses extends Component {
                 <h2>CAMPUSES: </h2>
                 {campuses.map(campus => {
                     return (
-                        <div>
-                            <li key={campus.id}>
-                                <NavLink to={`/campus/${campus.id}`} activeClassName='active'>
-                                    <img src={campus.image}></img>
-                                    <span>{campus.name}</span>
-                                </NavLink>
-                            </li>
-                            <form>
-                            </form>
-                        </div>
+                        <li key={campus.id}>
+                            <NavLink to={`/campus/${campus.id}`} activeClassName='active'>
+                                <img src={campus.image}></img>
+                                <span>{campus.name}</span>
+                            </NavLink>
+                        </li>
                     )
                 })}
+                <NewCampus history={this.props.history}/>
             </ul>
         )
     }
