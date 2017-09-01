@@ -51,7 +51,7 @@ router.put('/:campusId', function(req, res, next){
     .then(function(campus){
         campus.update(req.body)
             .then(function(camp){
-                res.json({message: 'Updated successfully', campus:camp})
+                res.json(camp)
             })
         })
     .catch(function(err){

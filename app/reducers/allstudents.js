@@ -39,6 +39,14 @@ export function fetchPostStudent (student) {
     }
 }
 
+export function updateStudent (student, id) {
+    return function thunk (dispatch) {
+        return axios.put(`/api/student/${id}`, student)
+            .then (res => res.data)
+            .then(student => student)
+    }
+}
+
 //reducer 
 export default function allStudentReducer (state = [], action){
     switch (action.type) {

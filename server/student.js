@@ -32,7 +32,6 @@ router.get('/campus/:studentId', function(req, res, next){
 router.post('/', function (req, res, next){
     Student.create(req.body)
     .then(student => {
-        // console.log(student, 'student')
         res.json(student)
         })
     })
@@ -44,7 +43,7 @@ router.put('/:studentId', function(req, res, next){
     .then(function(student){
         student.update(req.body)
             .then(function(stud){
-                res.json({message: 'Updated successfully', student:stud})
+                res.json(stud)
             })
         })
     .catch(function(err){

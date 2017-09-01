@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import store from '../store'
 import { fetchOneStudent, fetchCampfromStud } from '../reducers/index';
+import UpdateStudent from './UpdateStudent'
 
 class SingleStudent extends Component {
 
@@ -23,7 +24,8 @@ class SingleStudent extends Component {
                 <h1>{student.name}</h1>
                 <li><b>Email:</b> {student.email}</li>   
                 <li><b>Campus: </b><NavLink to={`/campus/${campus.id}`} activeClassName='active'>{campus.name}</NavLink></li>
-                
+                <button >Update Student</button>
+                <li> <UpdateStudent student={student} history={this.props.history}/> </li>
             </ul>
         )
     }
