@@ -21,9 +21,9 @@ class SingleStudent extends Component {
         return (
             <ul>
                 <h1>{student.name}</h1>
-                <li><b>Email:</b> {student.email}   
+                <li><b>Email:</b> {student.email}</li>   
                 <li><b>Campus: </b><NavLink to={`/campus/${campus.id}`} activeClassName='active'>{campus.name}</NavLink></li>
-                </li>
+                
             </ul>
         )
     }

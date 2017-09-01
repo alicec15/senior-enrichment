@@ -30,19 +30,13 @@ router.get('/campus/:studentId', function(req, res, next){
 
 //POST new student
 router.post('/', function (req, res, next){
-    Student.findOrCreate({
-        where: {
-            name: req.body.name
-        }
+    Student.create(req.body)
+    .then(student => {
+        // console.log(student, 'student')
+        res.json(student)
+        })
     })
-    .spread(function (student, createdStudent) {
-        Student.create(req.body)
-            .then(function(stud){
-                res.json({message: 'Created successfully', student: stud})
-            })
-    })
-    .catch(next)
-})
+
 
 //PUT new student
 router.put('/:studentId', function(req, res, next){

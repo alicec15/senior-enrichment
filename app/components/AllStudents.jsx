@@ -14,7 +14,7 @@ class AllStudents extends Component {
 
         return (
             <ul>
-                <h2>STUDENTS: </h2>
+                <h2>STUDENTS: <NavLink to={`/students/add`} activeClassName='active'><button onClick=''>+</button></NavLink></h2>
                 {students.map(student => {
                     return (
                         <li key={student.id}>

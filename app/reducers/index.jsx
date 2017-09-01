@@ -10,6 +10,7 @@ import students from './allstudents';
 import student from './onestudent';
 import campus from './onecampus';
 import newCampus from './newcampus';
+// import newStudent from './newstudent';
 
 
 //combining subreducers
@@ -21,4 +22,5 @@ export * from './allstudents'
 export * from './onestudent'
 export * from './onecampus'
 export * from './newcampus'
+// export * from './newstudents'
 
